@@ -39,9 +39,9 @@
     if (!name.trim()) errors.name = "Name is required";
     if (!email.trim() || !email.includes("@"))
       errors.email = "Valid email is required";
-    if (isNaN(amount) || Number(amount) <= 0 || Number(amount) <= 1000000)
+    if (isNaN(amount) || Number(amount) <= 0 || Number(amount) > 1000000)
       errors.amount = "Valid loan amount is required. Cannot exceed 1000000.";
-    if (isNaN(term) || Number(term) <= 0 || Number(term) <= 5)
+    if (isNaN(term) || Number(term) <= 0 || Number(term) > 5)
       errors.term = "Loan term must be a positive number and maximum should be 5 years.";
     return Object.keys(errors).length === 0;
   }
